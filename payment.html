@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Adorning Wreaths</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles1.css">
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>Adorning Wreaths - Secure Payment</h1>
+</header>
+
+<main>
+  <div class="content">
+    <h2>Complete Your Purchase</h2>
+    <p>Thank you for choosing Adorning Wreaths. Please complete your payment details below.</p>
+
+    <!-- Payment Form -->
+    <form action="/submit-payment" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" required maxlength="16" pattern="[0-9]{16}" title="Enter a 16-digit card number">
+      </div>
+
+      <div class="form-group">
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/([0-9]{2})" title="MM/YY">
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required maxlength="3" pattern="[0-9]{3}" title="Enter a 3-digit CVV">
+      </div>
+
+      <button type="submit" class="btn">Submit Payment</button>
+    </form>
+  </div>
+
+  <!-- Social Media Links with Icons -->
+  <div class="social-media">
+    <h2>Follow Us</h2>
+    <p>Stay updated with our latest wreath designs and offers!</p>
+    <a href="https://www.facebook.com/pamela.goodman.9279?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> |
+    <a href="https://www.instagram.com/goodman8538?igsh=MTMwamw4YXE4bTJlYQ==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
+    <a href="https://nextdoor.com/p/F4Q7RrBnpb4h?utm_source=share&extras=ODA3NjAxMDg%3D" target="_blank"><i class="fas fa-home"></i> Nextdoor</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Adorning Wreaths | <a href="index.html">Back to Homepage</a></p>
+</footer>
+
+</body>
+</html>

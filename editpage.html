@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adorning Wreaths - Hand-Crafted Elegance</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .wreath-gallery {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .wreath-gallery img {
+      width: 350px;
+      height: auto;
+      border: 5px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    /* Zoom effect on hover */
+    .wreath-gallery img:hover {
+      transform: scale(1.2); /* Zoom in effect */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for effect */
+    }
+
+    /* Modal for zooming */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid #fff;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal:hover {
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #fff;
+      color: #333;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    footer:hover {
+      opacity: 1;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Adorning Wreaths - Hand-Crafted Elegance</h1>
+</header>
+
+<main>
+  <div class="logo">
+    <img src="images/Adorning.png" alt="Adorning Wreath of Beauty Logo">
+  </div>
+
+  <div class="content">
+    <h2>Beautiful, Hand-Crafted Wreaths</h2>
+    <p>
+      At Adorning Wreaths, we offer an exquisite collection of hand-crafted wreaths made from the finest materials. 
+      Each wreath is thoughtfully designed to bring beauty and elegance to your home or special occasion. 
+      Whether you're looking for something timeless or seasonal, our wreaths provide a warm, welcoming touch to any space.
+    </p>
+
+    <h2>High-Quality Materials</h2>
+    <p>
+      Every wreath is created using high-quality, carefully selected flowers, leaves, and accents. 
+      Our artisans pay close attention to detail, ensuring that each wreath is both durable and visually stunning. 
+      When you choose an Adorning wreath, you are choosing a product made with pride and craftsmanship.
+    </p>
+
+    <h2>Perfect for Any Occasion</h2>
+    <p>
+      Our wreaths are perfect for a variety of occasions, from celebrating holidays to adding a unique decorative element to your home year-round. 
+      We offer designs for Christmas, weddings, and everyday home decor. With Adorning Wreaths, you’ll find the perfect accent piece that reflects your style and taste.
+    </p>
+
+    <div class="wreath-gallery">
+      <img src="images/image_67207425.JPG" alt="Wreath Image 1">
+      <img src="images/IMG_4274.jpg" alt="Wreath Image 2">
+      <img src="51D895E2-CBAB-4E75-BBFF-08162E3FAD22.jpg" alt="Wreath Image 3">
+    </div>
+
+    <div class="wreath-gallery">
+      <img src="images/image_67219457.JPG" alt="Wreath Image 1">
+      <img src="images/image_67221249.JPG" alt="Wreath Image 2">
+      <img src="images/image_67226625.JPG" alt="Wreath Image 3">
+    </div>
+
+    <div class="wreath-gallery">
+      <img src="images/IMG_4278.jpg" alt="Wreath Image 1">
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Adorning Wreath of Beauty | <a href="homepage.html">Back to Homepage</a></p>
+</footer>
+
+<!-- Modal for zoom -->
+<div id="imageModal" class="modal">
+  <img id="modalImage" src="" alt="Zoomed Image">
+</div>
+
+<script>
+  // Get all images in the gallery
+  const galleryImages = document.querySelectorAll('.wreath-gallery img');
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+
+  // Function to open the modal with the clicked image
+  galleryImages.forEach(image => {
+    image.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = image.src;
+    });
+  });
+
+  // Close modal when clicked
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
