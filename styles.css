@@ -118,4 +118,10 @@ body {
     max-width: 200px;
     height: auto;
   }
+  .banner img {
+    width: 100%; /* Ensure it fills the banner horizontally */
+    height: 100%; /* Ensure it fills the banner vertically */
+    object-fit: cover; /* Crop the image if necessary to fit both dimensions */
+    display: block; /* Remove any gaps below the image */
+  }
   
